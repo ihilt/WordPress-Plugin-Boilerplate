@@ -100,4 +100,10 @@ class Plugin_Name_Public {
 
 	}
 
+    public function public_shortcode( $atts, $content = null ) {
+    	ob_start();
+    	include_once( 'partials/'.$this->plugin_name.'-public-display.php' );
+    	return ob_get_clean();
+    }
+
 }
